@@ -1,3 +1,12 @@
+.container {
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .botao {
   display: inline-block;
   background: linear-gradient(#ffbf00, #f2a50c);
