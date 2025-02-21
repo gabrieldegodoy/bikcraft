@@ -1,5 +1,4 @@
 //Ativar links do Menu
-
 const links = document.querySelectorAll('.header-menu a');
 
 function ativarLink (link) {
@@ -13,8 +12,8 @@ function ativarLink (link) {
 
 links.forEach(ativarLink);
 
-//Ativar Itens do Orçamento
 
+//Ativar Itens do Orçamento
 const parametros = new URLSearchParams(location.search);
 
 function ativarProduto(parametro) {
@@ -25,3 +24,23 @@ function ativarProduto(parametro) {
 };
 
 parametros.forEach(ativarProduto);
+
+
+//Perguntas Frequentes
+const perguntas = document.querySelectorAll('.perguntas button');
+
+function ativarPergunta(event) {
+  const pergunta = event.currentTarget;
+  const controls = pergunta.getAttribute('aria-controls');
+  const resposta = document.getElementById(controls);
+
+  resposta.classList.toggle('ativa');
+  const ativa = resposta.classList.contains('ativa');
+  pergunta.setAttribute('aria-expanded', true);
+};
+
+function eventosPerguntas(pergunta) {
+  pergunta.addEventListener('click', ativarPergunta);
+};
+
+perguntas.forEach(eventosPerguntas);
